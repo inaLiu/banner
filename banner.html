@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.bootcss.com/jquery/1.12.2/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+<style>
+	*{margin:0;padding:0;}
+	body{font:12px/1.5 arial;}
+	img{vertical-align: middle;border:0;}
+	
+	.slidebox{margin:20px;}
+
+	.slidebox{width:400px;height:200px;overflow:hidden;position:relative;}
+	.slidebox ul{font-size:0;white-space: nowrap;}
+	.slidebox li{display:inline-block;width:400px;position: relative;}
+	.slidebox li img{width:400px;height:200px;}
+	.slidebox .point{position:absolute;bottom:5px;right:10px;}
+	.slidebox .point span{
+		display:inline-block;
+		width:10px;
+		height:10px;
+		border-radius: 50%;
+		background:#fff;
+		margin:0 2px;
+		opacity: .6;
+		cursor:pointer;
+	}
+	.slidebox .point span:hover,.slidebox .point span.cur{
+		opacity: 1
+	}
+	.slidebox .arrow-link{
+		position: absolute;
+		top:50%;
+		margin-top:-10px;
+		width:20px;
+		height:20px;
+		z-index:10;
+		background:red;
+		cursor: pointer;
+	}
+	.slidebox .arrow-left{
+		left:0;
+	}
+	.slidebox .arrow-right{
+		right:0;
+	}
+	
+	#slide-1 li .title{
+		position: absolute;
+		bottom:0;
+		left:0;
+		width:100%;
+		font-size:14px;
+		background:rgba(0,0,0,.4);
+		color:#fff;
+		padding:5px;
+	}
+
+	#slide-2 li{width:210px;}
+	#slide-2 li img{width:190px;}
+	
+	#slide-3 .point{
+		width:100%;
+		bottom:0;
+		left:0;
+		background:rgba(0,0,0,.2);
+		text-align: center;
+		padding:10px 0;
+	}
+
+
+</style>
+<div id="box" style="position: absolute;z-index:1">asdf</div>
+<div class="slidebox" id="slide-1">
+	<ul>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/e602c31dd794d2092bcecf48f4253250e05ec66b12137-zWqZzN_fw658" alt="">
+				<span class="title">01-asdlfasdf</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/98ca45ea02bc9f0a2e1d0406399012c748c20e0092de-bjaXaF_fw658" alt="">
+				<span class="title">02-asdlfasdf</span>
+
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/ac4518efeabd89e7c5368af4b094b1efb0986011718c-OOmFnT_fw658" alt="">
+				<span class="title">03-asdlfasdf</span>
+
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/98ca45ea02bc9f0a2e1d0406399012c748c20e0092de-bjaXaF_fw658" alt="">
+				<span class="title">04-asdlfasdf</span>
+
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/ac4518efeabd89e7c5368af4b094b1efb0986011718c-OOmFnT_fw658" alt="">
+				<span class="title">05-asdlfasdf</span>
+
+			</a>
+		</li>
+	</ul>
+</div>
+
+<div class="slidebox" id="slide-2">
+	<ul>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/e602c31dd794d2092bcecf48f4253250e05ec66b12137-zWqZzN_fw658" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/98ca45ea02bc9f0a2e1d0406399012c748c20e0092de-bjaXaF_fw658" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/ac4518efeabd89e7c5368af4b094b1efb0986011718c-OOmFnT_fw658" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/98ca45ea02bc9f0a2e1d0406399012c748c20e0092de-bjaXaF_fw658" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/ac4518efeabd89e7c5368af4b094b1efb0986011718c-OOmFnT_fw658" alt="">
+			</a>
+		</li>
+	</ul>
+</div>
+
+<div class="slidebox" id="slide-3">
+	<ul>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/e602c31dd794d2092bcecf48f4253250e05ec66b12137-zWqZzN_fw658" alt="">
+				<span class="title">01-asdlfasdf</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/98ca45ea02bc9f0a2e1d0406399012c748c20e0092de-bjaXaF_fw658" alt="">
+				<span class="title">02-asdlfasdf</span>
+
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/ac4518efeabd89e7c5368af4b094b1efb0986011718c-OOmFnT_fw658" alt="">
+				<span class="title">03-asdlfasdf</span>
+
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/98ca45ea02bc9f0a2e1d0406399012c748c20e0092de-bjaXaF_fw658" alt="">
+				<span class="title">04-asdlfasdf</span>
+
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://img.hb.aicdn.com/ac4518efeabd89e7c5368af4b094b1efb0986011718c-OOmFnT_fw658" alt="">
+				<span class="title">05-asdlfasdf</span>
+
+			</a>
+		</li>
+	</ul>
+</div>
+
+
+<script>
+var x = $("#box").css("z-index")
+
+
+$(".g-select-top").click(function() {
+	var cur = $(this).parent(".m-select-main");
+	if(+cur.css("z-index") == 1) {
+		cur.css("z-index", 3).siblings().css("z-index", 1)
+	}
+})
+
+
+console.log(x)
+	function slidePop(obj) {
+		var dfobj = {
+			id:"",
+			auto: true,
+			speed: 200,
+			time:1000,
+			point:true,
+			arrow:true,
+			show:1
+		}
+		this.state = $.extend({}, dfobj, obj);
+		this.dom = $(this.state.id)
+		this.li = this.dom.find("li");
+		this.page = Math.ceil(this.li.length/this.state.show);
+		this.curNum = 0;
+		this.timer = null;
+		this.init();
+	}
+
+	slidePop.prototype = {
+		init: function() {
+			this.setPoint();
+			if(this.state.auto) {
+				this.autoMove()
+			}
+		},
+		sayhi: function() {
+			alert(this.setPoint())
+		},
+		setPoint: function() {
+			var me = this
+			var i = 0
+			var html = $("<div class='point'></div>")
+			if(me.state.point) {
+				for(i; i < me.page; i++) {
+					var curTxt = i==0 ? "class='cur'" : ""
+					html.append("<span "+curTxt+"></span>")
+				}
+				me.dom.append(html);
+
+				me.dom.on("click", ".point span", function() {
+					var that = $(this);
+					var index = that.index();
+					me.curNum = index
+					me.move(index)
+				})
+				if(me.state.auto) {
+					me.dom.on("mouseenter", ".point span, .arrow-link", function() {
+						clearTimeout(me.timer)
+					})
+					me.dom.on("mouseleave", ".point span, .arrow-link", function() {
+						me.autoMove()
+					})
+				}
+			}
+			var arrow = $("<span class='arrow-link arrow-left'></span>\
+				<span class='arrow-link arrow-right'></span>");
+			if(me.state.arrow) {
+				me.dom.append(arrow)
+				function arrowact(num) {
+
+					if(num == -1){
+						if(me.curNum == 0) {
+							me.curNum = me.page-1
+						}else{
+							me.curNum += num
+						}
+					}
+
+					if(num == 1) {
+						if(me.curNum == me.page-1) {
+							me.curNum = 0
+						}else{
+							me.curNum += num
+						}
+					}
+					me.move(me.curNum)
+				}
+
+				me.dom.on("click", ".arrow-left", function() {
+					arrowact(-1)
+				})
+				me.dom.on("click", ".arrow-right", function() {
+					arrowact(1)
+				})
+			}
+			
+		},
+		move: function(num) {
+			var wd = this.li.width();
+
+			var mvDis = 0;
+
+			if(num == this.page-1) {
+				var end = (this.li.length%this.state.show)
+				mvDis = wd*(this.li.length-end-1)
+
+			}else{
+				mvDis = num*wd*this.state.show
+			}
+
+			this.dom.find("ul").stop().animate({
+				marginLeft: - mvDis
+			}, this.state.speed)
+			this.dom.find(".point span").eq(num).addClass("cur").siblings().removeClass("cur")
+		},
+		autoMove: function() {
+			var me = this;
+			function suan() {
+				if(me.curNum < me.page-1) {
+					me.curNum +=1
+				}else{
+					me.curNum = 0
+				}
+				me.move(me.curNum)
+			}
+			me.timer = setTimeout(function() {
+				suan();
+				me.autoMove()
+			},me.state.time)
+
+
+			
+		}
+	}
+
+	var b1 = new slidePop({
+		id:"#slide-1",
+		speed:300,
+		time:3000,
+		arrow:true,
+	})
+
+	var b2 = new slidePop({
+		id:"#slide-2",
+		speed:300,
+		time:3000,
+		show:2,
+		auto:false,
+		point:false
+	})
+
+	var b3 = new slidePop({
+		id:"#slide-3",
+		speed:300,
+		time:3000,
+		arrow:false
+	})
+
+</script>
+</body>
+</html>

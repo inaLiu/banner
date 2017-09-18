@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://demo.lanrenzhijia.com/2016/star0422/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>纯CSS3模拟太阳、地球、月亮旋转效果</title>
+<style>
+.box{
+	transform: scale(0.5);
+	position: relative;
+	padding: 1px;
+	height: 300px;
+	width: 300px;
+	margin:100px auto;
+}	
+.sunline{
+	position:relative;
+	height: 400px;
+	width: 400px;
+	background: #e4e;
+	border-radius: 50%;
+	margin: 50px 0 0 50px;
+	display: flex;
+	animation: rotate 10s infinite linear;
+}
+
+.earthline{
+	position: absolute;
+	right: 57px;
+	top: 50%;
+	height: 50px;
+	width: 50px;
+	margin: 11px -100px 0 0;
+	background: #ee54e3;
+	border-radius: 50%;
+	display: flex;
+	animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate{
+	100%{transform:rotate(360deg);}
+}
+</style>
+</head>
+<body>
+<div class="box">
+	<div class="sunline">
+		<div class="earthline"></div>
+		<div class="earthline" style="right: 123px;top: 5px;"></div>
+		<div class="earthline" style="right: 209px;top: 375px;"></div>
+	</div>
+</div>
+
+</body>
+</html>
